@@ -68,7 +68,7 @@ const evaluateExpression = (expression, path, scheme) => {
 const evaluateUrl = (url) => {
   let solved = false;
   schemes.forEach((scheme) => {
-    if (url.startsWith(scheme)) {
+    if (url.indexOf(scheme) === 0) {
       const path = url.substring(scheme.length - 1);
       routes.forEach((route) => {
         const result = evaluateExpression(route.expression, path, scheme);
